@@ -78,3 +78,25 @@ function setupMap()
     }));
     
 }
+
+$(function(){
+   
+   setupMap();
+   
+   $('#search-button').click(function(){
+       
+        let search_terms = $('#search-terms').val();
+        let center = map.getCenter();
+        console.log(center);
+
+        axios.get(API_URL + "/venues/explore", {
+        params: {
+            "client_id":CLIENT_ID,  
+            "client_secret":CLIENT_SECRET,
+            "v":'20193009', // version
+            "limit":100, // no of results returned 
+            "ll":center.lat + "," + center.lng, // latitude/longtitude
+            "query":search_terms // things we searching for 
+       }
+        }).then(function(response){
+        $("#results").empty();
