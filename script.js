@@ -100,3 +100,33 @@ $(function(){
        }
         }).then(function(response){
         $("#results").empty();
+        
+        for (let each_marker of all_markers)
+        {
+            each_marker.remove();
+        }
+        
+        all_markers = [];
+        
+        let results = response.data.response.groups[0].items;
+        for (let each_result of results)
+        {
+          let marker = new mapboxgl.Marker();
+          marker.setLngLat([each_result.venue.location.lng, each_result.venue.location.lat]);
+          marker.addTo(map); 
+        
+          let popup = new mapboxgl.Popup({
+              offset: 25
+          });
+          
+          popup.setHTML(each_result.venue.name);
+          
+          marker.setPopup(popup);
+            
+          all_markers.push(marker);
+            
+        }
+    })
+   })
+    
+});
