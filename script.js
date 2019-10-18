@@ -60,3 +60,21 @@ function setupMap()
     for (var i = 0; i < inputs.length; i++) {
     inputs[i].onclick = switchLayer;
     }
+    
+    //added driving directions to map
+    map.addControl(new MapboxDirections({
+    accessToken: mapboxgl.accessToken
+    }), 'bottom-left');
+    
+         // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Add geolocate control to the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+    enableHighAccuracy: true
+    },
+    trackUserLocation: true
+    }));
+    
+}
