@@ -29,3 +29,21 @@ function testFourSquare()
       console.log(response.data.response.groups[0].items);  
     })
 }
+
+//to put map on html 
+function setupMap()
+{
+    mapboxgl.accessToken = "pk.eyJ1IjoidmluY2VudGthbiIsImEiOiJjazE3aTJhdzUwOHE2M3FtemJ1eHU2NXByIn0.QdvNqEBV2P657xWrqU8UMw";
+    
+    map = new mapboxgl.Map({
+    container: 'map', // naming my map 
+    style:'mapbox://styles/mapbox/streets-v11', // how the map looks on html
+    center:[103.8198, 1.3521], // center of map set at singapore 
+    zoom:10 // how zoomed we are 
+    });
+    
+    //add search function
+    map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+    }),'top-left');
