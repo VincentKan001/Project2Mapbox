@@ -1,0 +1,65 @@
+#map {
+    height: 600px;
+    width:100%;
+}
+
+h1 {
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 300%;
+}
+
+body {
+  background-color:black;
+}
+
+.navbar {
+  background-color: black;
+  width: 100%;
+  overflow: auto;
+
+}
+
+.navbar-nav > li{
+  padding-left:20px;
+  padding-right:20px;
+  margin:5px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row; 
+  
+}
+
+#menu {
+position: absolute;
+background: black;
+padding: 10px;
+width:100%;
+font-family: 'Open Sans', sans-serif;
+color: white; 
+
+}
+
+.jumbotron {
+background-color: black;
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/map4.jpeg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+height:200px;
+
+}
+
+#search-button {
+  background-color: orangered;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
